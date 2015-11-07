@@ -1,0 +1,11 @@
+.padded {
+  padding: 15px;
+}
+
+.min-200 {
+  min-width: 200px;
+}
+
+.map {
+  min-height: 300px;
+}

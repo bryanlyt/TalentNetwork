@@ -1,0 +1,27 @@
+<% if @repos && @repos.any? %>
+  <h3>
+    <%= t(:facebook_repos) %>
+    <%= link_to '#collapse_repos', aria: { expand: true, controls: :collapse_repos }, 'data-toggle' => 'collapse' do %>
+      <i class="fa fa-arrow-circle-o-down"></i>
+    <% end %>
+  </h3>
+  <div class="collapse" id="collapse_repos">
+    <div class="row">
+      <% @repos.each_with_index do |repo, i| %>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <%= link_to repo.name, repo.html_url %>
+            </div>
+            <div class="panel-body">
+              <%= repo.description %>
+            </div>
+            <div class="panel-footer">
+              <%= repo.language.blank? ? t(:unknown) : repo.language %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

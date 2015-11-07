@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TalentNetwork</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+      <%= t(:app_name) %>
+    </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield :stylesheets %>
+    <%= include_gon %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= yield :javascript %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/navbar' %>
+    <div class="container">
+      <%= render 'layouts/alerts' %>
+      <%= yield %>
+    </div>
+  </body>
 </html>

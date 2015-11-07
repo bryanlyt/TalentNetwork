@@ -1,0 +1,3 @@
+<% %i(notice error success alert).each do |msg| %>
+  <%= alert(flash[msg], type: msg) if flash[msg] %>
+<% end %>

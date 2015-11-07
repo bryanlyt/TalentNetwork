@@ -1,0 +1,24 @@
+<nav class='navbar navbar-default'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button class='navbar-toggle collapsed' data-toggle="collapse" data-target="#navbar-collapse">
+        <span class='sr-only'><%= t(:toggle_navigation) %></span>
+        <span class='icon-bar_'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+          <%= link_to t(:app_name), root_path, class: 'navbar-brand' %>
+      </button>
+    </div>
+    <div class='collapse navbar-collapse' id='navbar-collapse'>
+      <%= render 'layouts/navbar_links' %>      
+      <ul class='nav navbar-nav navbar-right'>
+        <% if current_user %>
+          <%= render 'layouts/user_menu' %>
+        <% else %>
+          <%= render 'devise/sessions/new' %>
+        <% end %>        
+      </ul>
+    </div>
+  </div>
+</nav>
+

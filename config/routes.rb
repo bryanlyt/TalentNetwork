@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  resources :projects
+  resources :users, only: :show
+
+  devise_for :users, path: :accounts, controllers: {
+    registrations: 'users/registrations',
+    passwords: 'users/passwords',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
+  root 'dashboard#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

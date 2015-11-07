@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= t(:open_talent, count: 2) %>
+  </div>
+  <div class="panel-body">
+    <% if @project.talents.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <%= t(:name) %>
+            </th>
+            <th>
+              <%= t(:found) %>
+            </th>
+            <th>
+              <%= t(:updated_at) %>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @project.talents.each do |talent| %>
+            <tr>
+              <td>
+                <%= link_to talent, talent %>
+              </td>
+              <td>
+                <%= check_box_tag nil, nil, talent.found, disabled: true %>
+              </td>
+              <td>
+                <%= l(talent.updated_at) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h3>
+        <%= t(:no_available_positions) %>
+      </h3>
+    <% end %>
+  </div>
+</div>

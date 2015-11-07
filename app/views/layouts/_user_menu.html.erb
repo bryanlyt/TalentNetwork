@@ -1,0 +1,29 @@
+<li class="dropdown">
+  <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+    <p>Signed in as <%= current_user %></p>
+    <span class="caret"></span>
+  <% end %>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to t(:my_profile), user_path(current_user) %>
+    </li>
+    <li>
+      <%= link_to t(:edit_profile), edit_user_registration_path %>
+    </li>
+    <li class="divider"></li>
+    <% if can? :new, Project %>
+      <li>
+        <%= link_to t(:add, name: Project), new_project_path %>
+      </li>
+    <% end %>
+    <% if can? :new, Talent %>
+      <li>
+        <%= link_to t(:add, name: t(:talent, count: 1)), new_talent_path %>
+      </li>
+    <% end %>
+    <li class="divider"></li>
+    <li>
+      <%= link_to t(:sign_out), destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+</li>

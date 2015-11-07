@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>
+    <%= @user %>
+  </h1>
+  <% @user.tags.each do |tag| %>
+    <span class="label label-info">
+      <%= tag.name %>
+    </span>
+  <% end %>
+</div>
+<%= render 'facebook_repos' %>
