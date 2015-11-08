@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  include Taggable
 
   has_many :talent_applications
   has_many :talents, through: :talent_applications

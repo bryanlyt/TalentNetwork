@@ -11,10 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106073801) do
+ActiveRecord::Schema.define(version: 20151107163439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.integer  "creator_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_users", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "user_id"
+  end
+
+  create_table "talents", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "found"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "talents_tags", force: :cascade do |t|
+    t.integer "talent_id"
+    t.integer "tag_id"
+  end
+
+  create_table "talents_users", force: :cascade do |t|
+    t.integer "talent_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -27,6 +66,10 @@ ActiveRecord::Schema.define(version: 20151106073801) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "login"
+    t.string   "image_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

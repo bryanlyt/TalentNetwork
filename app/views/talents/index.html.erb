@@ -1,0 +1,64 @@
+<div class="page-header">
+  <h1>
+    <%= t(:suitable_talents) %>
+  </h1>
+</div>
+<% if @talents.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <%= t(:name) %>
+        </th>
+        <th class="hidden-xs">
+          <%= t(:tag, count: 2) %>
+        </th>
+        <th>
+          <%= t(:project, count: 1) %>
+        </th>
+        <th class="hidden-xs">
+          <%= t(:location) %>
+        </th>
+        <th>
+          <%= t(:found) %>
+        </th>
+        <th>
+          <%= t(:updated_at) %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @talents.each do |talent| %>
+        <tr>
+          <td>
+            <%= link_to talent.name, talent %>
+          </td>
+          <td class="hidden-xs">
+            <% talent.tag_names.each do |name| %>
+              <span class="label label-info">
+                <%= name %>
+              </span>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to talent.project_name, talent.project %>
+          </td>
+          <td class="hidden-xs">
+            <%= talent.project_location %>
+          </td>
+          <td>
+            <%= check_box_tag nil, nil, talent.found, disabled: true %>
+          </td>
+          <td>
+            <%= l(talent.updated_at) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate(@talents) %>
+<% else %>
+  <h3 class="text-center">
+    <%= t(:no_suitable_talents) %>
+  </h3>
+<% end %>

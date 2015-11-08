@@ -1,0 +1,14 @@
+<div class="panel-footer">
+  <%= link_to t(:apply), %>
+    apply_talent_path(@talent),
+    class: 'btn btn-default',
+    disabled: cannot?(:apply, @talent)
+  <% end %>
+  <% if can? :update, @talent %>
+    <%= link_to t(:close), %>
+      talent_path(@talent, talent: { active: false }),
+      method: :put,
+      class: 'btn btn-danger'
+    <% end %>
+  <% end %>
+</div>

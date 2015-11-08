@@ -1,0 +1,48 @@
+<% if @talent.created_by?(current_user) %>
+  <h2>
+    <%= t(:applicant, count: 2) %>
+  </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <%= t(:name) %>
+        </th>
+        <th>
+          <%= t(:tag, count: 2) %>
+        </th>
+        <th>
+          <%= t(:applied_at) %>
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @talent.talent_applications.each do |application| %>
+        <tr>
+          <td>
+            <%= link_to application.user, application.user %>
+          </td>
+          <td>
+            <% application.user_tags.each do |tag| %>
+              <span class="label label-info">
+                <%= tag.name %>
+              </span>
+            <% end %>
+          </td>
+          <td>
+            <%= l(application.created_at) %>
+          </td>
+          <td>
+            <%= link_to t(:confirm), %>
+              talent_application_path(application, talent_application: { chosen: true }),
+              method: :put,
+              class: 'btn btn-success btn-sm',
+              disabled: application.chosen
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

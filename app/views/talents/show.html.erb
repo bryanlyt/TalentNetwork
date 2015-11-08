@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>
+    <%= @talent.name %>
+    <% unless @talent.active? %>
+      <span class="label label-default">
+        <%= t(:closed) %>
+      </span>
+    <% end %>
+  </h1>
+  <% @talent.tags.each do |tag| %>
+    <span class="label label-info">
+      <%= tag.name %>
+    </span>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t(:description) %>
+      </div>
+      <div class="panel-body">
+        <%= @talent.description %>
+      </div>
+      <%= render 'controls' %>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= t(:additional_info) %>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td>
+              <%= t(:project, count: 1) %>
+            </td>
+            <td>
+              <%= link_to @talent.project, @talent.project %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= t(:found) %>
+            </td>
+            <td>
+              <%= check_box_tag nil, nil, @talent.found, disabled: true %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'applicants' %>

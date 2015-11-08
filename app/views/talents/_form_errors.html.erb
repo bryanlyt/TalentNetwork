@@ -1,0 +1,5 @@
+<% if @talent.errors.any? %>
+  <% @talent.errors.full_messages.each do |message| %>
+    <%= alert(message, type: :error) %>
+  <% end %>
+<% end %>
