@@ -14,7 +14,7 @@ class Talent < ActiveRecord::Base
 	delegate :creator, to: :project
 
 	def self.suitable_for(user)
-		eager_load(:tags).joins(:tags).where('tags.name') => user.tag_names).distinct
+		eager_load(:tags).joins(:tags).where('tags.name' => user.tag_names).distinct
 	end
 
 	def to_s

@@ -23,13 +23,16 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# gem 'rubocop', require: false
+
 gem 'devise'
-gem 'cancancan', '~> 1.10'
-gem 'gon'
-gem 'font-awesome-rails'
-gem 'kaminari'
+gem 'cancancan', '~> 1.10' # authorization
+gem 'gon' # rails variable in js
+gem 'font-awesome-rails' # font
+gem 'kaminari' # paginate
+gem 'omniauth'
 gem 'omniauth-facebook'
+
+# gem 'rubocop', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

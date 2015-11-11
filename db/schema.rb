@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107163439) do
+ActiveRecord::Schema.define(version: 20151111041406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,22 @@ ActiveRecord::Schema.define(version: 20151107163439) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags_talents", force: :cascade do |t|
+    t.integer "talent_id"
+    t.integer "tag_id"
+  end
+
   create_table "tags_users", force: :cascade do |t|
     t.integer "tag_id"
     t.integer "user_id"
+  end
+
+  create_table "talent_applications", force: :cascade do |t|
+    t.integer  "talent_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "chosen",     default: false
   end
 
   create_table "talents", force: :cascade do |t|
@@ -41,18 +54,9 @@ ActiveRecord::Schema.define(version: 20151107163439) do
     t.string   "name"
     t.text     "description"
     t.boolean  "found"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "talents_tags", force: :cascade do |t|
-    t.integer "talent_id"
-    t.integer "tag_id"
-  end
-
-  create_table "talents_users", force: :cascade do |t|
-    t.integer "talent_id"
-    t.integer "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "active",      default: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,6 +74,11 @@ ActiveRecord::Schema.define(version: 20151107163439) do
     t.string   "uid"
     t.string   "login"
     t.string   "image_url"
+    t.integer  "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -6,10 +6,10 @@
   <div class="dropdown-menu padded">
     <%= form_tag session_path(:user), class: 'min-200' do %>
       <div class="form-group">
-        <%= text_field_tag 'user[email]', nil, class: 'form-control', placeholder: t(:email) %>
+        <%= text_field_tag 'user[email]', nil, class: 'form-control', placeholder: :email %>
       </div>
       <div class="form-group">
-        <%= password_field_tag 'user[password]', nil, class: 'form-control', placeholder: t(:password) %>
+        <%= password_field_tag 'user[password]', nil, class: 'form-control', placeholder: :password %>
       </div>
       <div class="checkbox">
         <label>
@@ -17,12 +17,12 @@
           <%= t(:remember_me) %>
         </label>
       </div>
-      <%= submit_tag t(:sign_in), class: 'btn btn-primary btn-block' %>
+      <%= submit_tag 'Sign In', class: 'btn btn-primary btn-block' %>
     <% end %>
     <div class="divider"></div>
     <%= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-block' do %>
       <i class="fa fa-lg fa-facebook"></i>
-      <%= t(:sign_in_with, provider: 'Facebook') %>
+      Sign in with Facebook
     <% end %>
     <div class="divider"></div>
     <%= link_to t(:forgot_password), new_password_path(:user) %>

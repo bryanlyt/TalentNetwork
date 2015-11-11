@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :talent_applications, only: :update
-  
+
   resources :talents do
     member do
       get :apply

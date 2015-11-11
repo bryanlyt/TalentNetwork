@@ -34,12 +34,11 @@
             <%= l(application.created_at) %>
           </td>
           <td>
-            <%= link_to t(:confirm), %>
+            <%= link_to t(:confirm), 
               talent_application_path(application, talent_application: { chosen: true }),
               method: :put,
               class: 'btn btn-success btn-sm',
-              disabled: application.chosen
-            <% end %>
+              disabled: application.chosen %>
           </td>
         </tr>
       <% end %>

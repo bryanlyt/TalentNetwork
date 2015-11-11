@@ -9,7 +9,7 @@ class TalentsController < ApplicationController
                    .page(params[:page])
     else
       @talents = Talent
-                   .eager_load(:tags)
+                  .eager_load(:tags)
                    .order(created_at: :desc)
                    .page(params[:page])
     end

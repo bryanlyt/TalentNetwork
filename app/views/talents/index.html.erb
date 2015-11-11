@@ -13,6 +13,7 @@
         <th class="hidden-xs">
           <%= t(:tag, count: 2) %>
         </th>
+
         <th>
           <%= t(:project, count: 1) %>
         </th>
@@ -34,9 +35,9 @@
             <%= link_to talent.name, talent %>
           </td>
           <td class="hidden-xs">
-            <% talent.tag_names.each do |name| %>
+            <% talent.tag_names.each do |tag| %>
               <span class="label label-info">
-                <%= name %>
+                <%= tag.name %>
               </span>
             <% end %>
           </td>

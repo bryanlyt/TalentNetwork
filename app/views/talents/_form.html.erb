@@ -27,13 +27,13 @@
   <%= f.submit nil, class: 'btn btn-default btn-block' %>
 <% end %>
 <% content_for :javascript do %>
-  <%= javascript_include_tag select2_javascript, %>
+  <%= javascript_include_tag select2_javascript, 
     'talents/form',
-    'data-turbolinks-track' => true
-  <% end %>
+    'data-turbolinks-track' => true %>
+
 <% end %>
 <% content_for :stylesheets do %>
-  <%= stylesheet_link_tag select2_stylesheet, %>
-    'data-turbolinks-track' => true
-  <% end %>
+  <%= stylesheet_link_tag select2_stylesheet, 
+    'data-turbolinks-track' => true %>
+
 <% end %>
