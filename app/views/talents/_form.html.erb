@@ -20,11 +20,11 @@
   </div>
   <div class="checkbox">
     <label>
-      <%= f.check_box :found %>
-      <%= t(:found) %>
+      <%= f.check_box :payment %>
+      Payment Provided?
     </label>
   </div>
-  <%= f.submit nil, class: 'btn btn-default btn-block' %>
+  <%= f.submit nil, class: 'btn btn-primary btn-block' %>
 <% end %>
 <% content_for :javascript do %>
   <%= javascript_include_tag select2_javascript, 

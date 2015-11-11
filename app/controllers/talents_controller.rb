@@ -48,7 +48,7 @@ class TalentsController < ApplicationController
   def apply
     talent = Talent.find(params[:id])
     talent.users << current_user
-    redirect_to talent, success: t(:successfully_applied)
+    redirect_to talent, success: 'Application successful!'
   end
 
   private
@@ -56,6 +56,6 @@ class TalentsController < ApplicationController
   def talent_params
     params
       .require(:talent)
-      .permit(:project_id, :name, :description, :found, :active)
+      .permit(:project_id, :name, :description, :payment, :active)
   end
 end

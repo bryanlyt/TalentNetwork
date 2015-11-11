@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= t(:open_talent, count: 2) %>
+    Looking For
   </div>
   <div class="panel-body">
     <% if @project.talents.any? %>
@@ -11,7 +11,7 @@
               <%= t(:name) %>
             </th>
             <th>
-              <%= t(:found) %>
+              <%= t(:payment) %>
             </th>
             <th>
               <%= t(:updated_at) %>
@@ -25,7 +25,7 @@
                 <%= link_to talent, talent %>
               </td>
               <td>
-                <%= check_box_tag nil, nil, talent.found, disabled: true %>
+                <%= check_box_tag nil, nil, talent.payment, disabled: true %>
               </td>
               <td>
                 <%= l(talent.updated_at) %>

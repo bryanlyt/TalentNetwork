@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    <%= t(:suitable_talents) %>
+    Available Talent Roles
   </h1>
 </div>
 <% if @talents.any? %>
@@ -21,7 +21,7 @@
           <%= t(:location) %>
         </th>
         <th>
-          <%= t(:found) %>
+          <%= t(:payment) %>
         </th>
         <th>
           <%= t(:updated_at) %>
@@ -35,9 +35,9 @@
             <%= link_to talent.name, talent %>
           </td>
           <td class="hidden-xs">
-            <% talent.tag_names.each do |tag| %>
+            <% talent.tag_names.each do |name| %>
               <span class="label label-info">
-                <%= tag.name %>
+                <%= name %>
               </span>
             <% end %>
           </td>
@@ -48,7 +48,7 @@
             <%= talent.project_location %>
           </td>
           <td>
-            <%= check_box_tag nil, nil, talent.found, disabled: true %>
+            <%= check_box_tag nil, nil, talent.payment, disabled: true %>
           </td>
           <td>
             <%= l(talent.updated_at) %>

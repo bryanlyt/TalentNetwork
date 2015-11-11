@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, omniauth_providers: [:facebook, :twitter]
 
   include Taggable
 
@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
            foreign_key: :creator_id
 
   validates :first_name, :last_name, presence: true
+
+
 
 
   def self.from_facebook(auth)

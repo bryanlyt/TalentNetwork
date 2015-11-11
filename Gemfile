@@ -31,6 +31,7 @@ gem 'font-awesome-rails' # font
 gem 'kaminari' # paginate
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # gem 'rubocop', require: false
 

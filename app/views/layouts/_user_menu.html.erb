@@ -1,7 +1,7 @@
 <li class="dropdown">
   <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do %>
-    <p>Signed in as <%= current_user %></p>
-    <span class="caret"></span>
+    <p>Signed in as <%= current_user %>
+    <span class="caret"></span></p>
   <% end %>
   <ul class="dropdown-menu">
     <li>
@@ -13,12 +13,12 @@
     <li class="divider"></li>
     <% if can? :new, Project %>
       <li>
-        <%= link_to t(:add, name: Project), new_project_path %>
+        <%= link_to 'Add Project', new_project_path %>
       </li>
     <% end %>
     <% if can? :new, Talent %>
       <li>
-        <%= link_to t(:add, name: t(:talent, count: 1)), new_talent_path %>
+        <%= link_to 'Add Talent Role', new_talent_path %>
       </li>
     <% end %>
     <li class="divider"></li>
