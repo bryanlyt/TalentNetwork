@@ -15,6 +15,6 @@ class Ability
     can [:new, :create], Talent if user.created_projects.any?
     can :update, Talent, project: { creator: user }, active: true
 
-    can :show, User
+    can [:show, :index], User
   end
 end

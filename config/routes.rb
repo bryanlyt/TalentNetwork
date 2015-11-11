@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  resources :users, only: :show
+  resources :users, only: [:show, :index]
 
   resources :talent_applications, only: :update
 

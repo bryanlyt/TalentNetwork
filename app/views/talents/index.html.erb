@@ -1,6 +1,7 @@
 <div class="page-header">
   <h1>
-    Available Talent Roles
+    Available Talent Roles &nbsp;
+    <%= link_to 'Add New', new_talent_path, class: 'btn btn-info', :method => :get %>
   </h1>
 </div>
 <% if @talents.any? %>
