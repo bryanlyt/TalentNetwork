@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: bryanlyt
+  api_key: '151751399815518'
+  api_secret: whnqSqvKcgbOpuWavaYJ5zNXrL8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: bryanlyt
+  api_key: '151751399815518'
+  api_secret: whnqSqvKcgbOpuWavaYJ5zNXrL8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: bryanlyt
+  api_key: '151751399815518'
+  api_secret: whnqSqvKcgbOpuWavaYJ5zNXrL8
+  enhance_image_tag: true
+  static_image_support: false

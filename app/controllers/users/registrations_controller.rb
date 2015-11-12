@@ -21,8 +21,14 @@ module Users
     # PUT /resource
     def update
       super do |resource|
+        # resource.avatar = params[:user][:avatar]
+
+        # profile_photo = params [:user][:avatar].delete_if(&:blank?)
+        # resource.update_profile_photo(*profile_photo)
+
         tag_names = params[:user][:tags].delete_if(&:blank?)
         resource.update_tags(*tag_names)
+        resource.update_attributes!(user_params)
       end
     end
 
@@ -44,7 +50,7 @@ module Users
 
     # You can put the params you want to permit in the empty array.
     def configure_sign_up_params
-      devise_parameter_sanitizer.for(:sign_up).push user_params
+      devise_parameter_sanitizer.for(:sign_up).push user_reg_params
     end
 
     # You can put the params you want to permit in the empty array.
@@ -64,8 +70,12 @@ module Users
 
     private
 
-    def user_params
+    def user_reg_params
       %i(first_name last_name)
+    end
+
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :email, :phone, :avatar, :gender, :date_of_birth, :city, :country, :website, :description)
     end
   end
 end

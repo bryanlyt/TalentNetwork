@@ -2,6 +2,9 @@
   <h1>
     User Profiles
   </h1>
+
+
+
 </div>
 <table class="table table-hover">
   <thead>
@@ -10,11 +13,14 @@
         <%= t(:name) %>
       </th>
       <th>
-        <%= t(:interested_in) %>
+        <%= t(:city) %> 
       </th>
       <th>
-        <%= t(:contact) %> (to be replaced with built-in message function)
+        <%= t(:country) %>
       </th>
+      <th>
+        <%= t(:interested_in) %>
+      </th>      
     </tr>
   </thead>
   <tbody>
@@ -23,15 +29,18 @@
         <td>
           <%= link_to user.to_s, user, :target => "_blank" %>
         </td>
+        <td>
+          <%= user.city %>
+        </td>
+        <td>
+          <%= user.country %>
+        </td>
         <td class="hidden-xs">
           <% user.tag_names.each do |name| %>
             <span class="label label-info">
               <%= name %>
             </span>
           <% end %>
-        </td>
-        <td>
-          <%= user.email %>
         </td>
       </tr>
     <% end %>

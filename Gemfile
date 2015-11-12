@@ -32,6 +32,10 @@ gem 'kaminari' # paginate
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'carrierwave'
+# gem 'rmagick'
+# gem 'fog'
+gem 'cloudinary'
 
 # gem 'rubocop', require: false
 

@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
 
+  
+  mount_uploader :avatar, AvatarUploader
 
 
 
@@ -64,4 +66,6 @@ class User < ActiveRecord::Base
   def from_facebook?
     provider == 'facebook'
   end
+
+
 end

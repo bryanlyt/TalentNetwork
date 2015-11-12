@@ -21,4 +21,5 @@ module Taggable
   def tag_names
     tags.map(&:name)
   end
+
 end
