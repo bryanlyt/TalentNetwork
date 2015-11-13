@@ -23,7 +23,7 @@
     </div>
     <% unless resource.from_facebook? %>
       <div class="form-group">
-        <%= f.label :current_password %>
+        <%= f.label :retype_your_current_password %>
         <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
       </div>
 

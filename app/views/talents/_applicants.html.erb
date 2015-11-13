@@ -21,7 +21,7 @@
       <% @talent.talent_applications.each do |application| %>
         <tr>
           <td>
-            <%= link_to application.user, application.user %>
+            <%= link_to application.user, application.user, :target => "_blank" %>
           </td>
           <td>
             <% application.user_tags.each do |tag| %>
@@ -31,7 +31,7 @@
             <% end %>
           </td>
           <td>
-            <%= l(application.created_at) %>
+            <%= application.created_at.to_formatted_s(:long) %>
           </td>
           <td>
             <%= link_to t(:confirm), 

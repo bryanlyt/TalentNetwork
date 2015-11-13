@@ -28,7 +28,7 @@
                 <%= check_box_tag nil, nil, talent.payment, disabled: true %>
               </td>
               <td>
-                <%= l(talent.updated_at) %>
+                <%= talent.updated_at.to_formatted_s(:long) %>
               </td>
             </tr>
           <% end %>

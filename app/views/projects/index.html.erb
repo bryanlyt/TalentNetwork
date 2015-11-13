@@ -15,8 +15,11 @@
         <%= t(:location) %>
       </th>
       <th>
-        <%= t(:created_by) %>
+        <%= t(:updated_at) %>
       </th>
+      <th>
+        Created by
+      </th>      
     </tr>
   </thead>
   <tbody>
@@ -27,6 +30,9 @@
         </td>
         <td>
           <%= project.location %>
+        </td>
+        <td>
+          <%= project.updated_at.to_formatted_s(:long) %>
         </td>
         <td>
           <%= project.creator %>

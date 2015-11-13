@@ -10,6 +10,9 @@
     <li>
       <%= link_to t(:edit_profile), edit_user_registration_path %>
     </li>
+    <li>
+      <%= link_to t(:my_messages), conversations_path %>
+    </li>
     <li class="divider"></li>
     <% if can? :new, Project %>
       <li>

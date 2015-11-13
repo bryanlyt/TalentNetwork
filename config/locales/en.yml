@@ -20,4 +20,101 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_name: 'Talent Network'
+  are_you_sure: 'Are you sure?'
+  unknown: Unknown
+
+  # landing
+  landing_title: Welcome to Talent Network
+  landing_content:
+    A better way to find performers & crew for your project.
+  suitable_positions: Suitable positions
+  no_suitable_positions:
+    "We haven't found any suitable positions matching your
+    skills. Try to update your profile tags."
+
+  # devise
+  sign_in: 'Sign in'
+  sign_up: 'Sign up'
+  sign_out: 'Sign out'
+  forgot_password: 'Forgot password?'
+  remember_me: 'Remember me'
+  reset_password: 'Reset password'
+  edit_profile: 'Edit profile'
+  my_profile: 'My profile'
+  edit: "Edit %{name}"
+  new: "New %{name}"
+  add: "Add %{name}"
+  delete: "Delete %{name}"
+  update: 'Update'
+  leave_blank_if_no_change: "leave blank if you don't want to change it"
+  cancel_account: 'Cancel my account'
+  change_password: 'Change your password'
+  new_password: 'New password'
+  confirm_new_password: 'Confirm new password'
+  sign_in_with: "Sign in with %{provider}"
+
+  # controllers
+  successfully_created: "'%{instance}' was successfully created!"
+  successfully_updated: "'%{instance}' was successfully updated!"
+  successfully_destroyed: "'%{instance}' was successfully deleted!"
+
+  #projects
+  created_by: "Created by %{name}"
+
+  # models
+  # user
+  user:
+    one: 'User'
+    other: 'Users'
+  email: Email
+  password: Password
+
+  # project
+  project:
+    one: 'Project'
+    other: 'Projects'
+  name: 'Name'
+  creator: 'Creator'
+  location: 'Location'
+
+  position:
+    one: 'Position'
+    other: 'Positions'
+
+  open_talent:
+    one: 'Open position'
+    other: 'Open positions'
+  found: Found
+  description: Description
+  additional_info: Additional information
+  updated_at: Last updated
+  apply: Apply for position
+  aleready_applied: You have already applied for this position
+  successfully_applied: You have successfully applied for this position
+  no_available_positions: No available positions
+  applied_at: Applied at
+  confirm: Confirm
+  close: Close
+  closed: Closed
+  application_confirmed: Your application is confirmed!
+
+  applicant:
+    one: Applicant
+    other: Applicants
+
+  tag:
+    one: Tag
+    other: Tags
+
+  # authorization
+  unauthorized:
+    default: 'You are not authorized to access this page.'
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"

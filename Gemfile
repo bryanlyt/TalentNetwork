@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -27,15 +29,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'cancancan', '~> 1.10' # authorization
 gem 'gon' # rails variable in js
-gem 'font-awesome-rails' # font
+# gem 'font-awesome-rails' # font
 gem 'kaminari' # paginate
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+# gem 'omniauth-facebook'
+# gem 'omniauth-twitter'
 gem 'carrierwave'
 # gem 'rmagick'
 # gem 'fog'
-gem 'cloudinary'
+gem 'cloudinary' # cloud storage for images
+gem 'mailboxer' # private message user inbox function
+gem 'will_paginate' # for mailboxer
+gem 'gravatar_image_tag' # gravatar as default avatar
+gem 'chosen-rails' # jQuery friendly dropdown
 
 # gem 'rubocop', require: false
 

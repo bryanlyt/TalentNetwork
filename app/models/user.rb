@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
 
-
+  acts_as_messageable
 
   def self.from_facebook(auth)
     name_ary = auth.info.name.split
@@ -67,5 +67,8 @@ class User < ActiveRecord::Base
     provider == 'facebook'
   end
 
+  def mailboxer_email(object)
+    email
+  end
 
 end

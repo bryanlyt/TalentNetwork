@@ -1,29 +1,58 @@
 <div class="page-header">
 
 	<div class="jumbotron">
-		<% unless @user.avatar_url.nil? %><%= image_tag @user.avatar_url(:profile) %><br><% end %>
 
-  	<h1><%= @user %></h1>
+		<div class="row">
+	  	<div class="col-sm-4">
+	  		<center>
+		    	<% unless @user.avatar_url.nil? %><%= image_tag @user.avatar_url(:profile) %><br><% end %>
 
-	<hr>
-  	<% @user.tags.each do |tag| %>
-    	<span class="label label-info">
-      	<%= tag.name %>
-    	</span>
-  	<% end %>
+  				<h2><%= @user %></h2>
+  					<br>
+	  			<% @user.tags.each do |tag| %>
+  	  			<span class="label label-info">
+    	  			<%= tag.name %>
+    				</span>
+  				<% end %>
+  			</center>
+  		</div>
 
-	<br><br>
-		Gender: <%= @user.gender %>
-		<br>
-		Date of Birth: <%= @user.date_of_birth %>
-		<br>
-		City: <%= @user.city %> 
-		<br>
-		Country: <%= @user.country %>
-		<br>
-		Website: <%= @user.website %>
-		<br>
-		Profile Description: <%= @user.description %>
+  		<div class="col-md-6">
+          <% unless current_user == @user %>
+            <%= link_to 'Send A Private Message', new_message_path(to: @user.id), class: 'btn btn-default btn-sm' %>
+          <% end %> <hr>
+  			<div class="row">
+  				<div class="col-sm-4">
+  					Gender: 
+  					<br>
+  					Date of Birth:
+  					<br>
+  					City:
+  					<br>
+  					Country:
+  					<br>
+  					Website: 
+  					<br>
+  					Profile Description:
+  					<br>
+  				</div>
+  				<div class="col-sm-8">
+  					<%= @user.gender %>
+  					<br>
+  					<%= @user.date_of_birth %>
+  					<br>
+  					<%= @user.city %>
+  					<br>
+  					<%= @user.country %>
+  					<br>
+  					<%= link_to @user.website, url_for(@user.website), :target => "_blank" %>
+  					<br>
+  					<%= @user.description %>
+  					<br>
+  				</div> <!-- col-sm-4 -->
+  			</div> <!-- row -->
+ 		 	</div> <!-- col-md-6 -->
 
-	</div>
-</div>
+		</div> <!-- row -->
+	</div> <!-- jumbotron -->
+</div> <!-- page-header -->

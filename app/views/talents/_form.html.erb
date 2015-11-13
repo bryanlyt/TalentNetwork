@@ -1,5 +1,5 @@
 <h1>
-  <%= @talent.persisted? ? t(:edit, name: t(:talent, count: 1)) : t(:new, name: t(:talent, count: 1)) %>
+  <%= @talent.persisted? ? t(:edit, name: Talent) : t(:new, name: Talent) %>
 </h1>
 <%= form_for @talent, html: { id: 'talent_form' } do |f| %>
   <div class="form-group">
