@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+
+  # include PgSearch
+  # multisearchable :against => [:first_name, :last_name, :email]
+
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,10 +22,11 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
 
+  acts_as_messageable
   
   mount_uploader :avatar, AvatarUploader
 
-  acts_as_messageable
+  
 
   def self.from_facebook(auth)
     name_ary = auth.info.name.split
@@ -70,5 +78,19 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
+
+def self.search(search)
+  where("first_name LIKE ? OR last_name LIKE ? OR city LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+end
+
+
+  # settings index: { number_of_shards: 1 } do
+  #   mappings dynamic: 'false' do
+  #     indexes :first_name, analyzer: 'english'
+  #     indexes :last_name, analyzer: 'english'
+  #     indexes :email, analyzer: 'english'
+  #     indexes :city, analyzer: 'english'
+  #   end
+  # end
 
 end

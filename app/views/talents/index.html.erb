@@ -60,7 +60,11 @@
   </table>
   <%= paginate(@talents) %>
 <% else %>
+  <br>
   <h3 class="text-center">
-    <%= t(:no_suitable_talents) %>
+    <%= t(:no_suitable_roles_for_you)%>
   </h3>
+  <h5 class="text-center">
+    Go to <%= link_to 'Edit Profile', edit_user_registration_path, :target => "_blank" %> & add some relevant tags for yourself.
+  </h5>
 <% end %>

@@ -3,9 +3,7 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <title>
-      Talent Network
-    </title>
+    <title>CAST.MY</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= yield :stylesheets %>
     <%= include_gon %>
@@ -15,9 +13,11 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
+    <br><br><br><br>
     <div class="container">
       <%= render 'layouts/alerts' %>
       <%= yield %>
     </div>
+      <%= render 'layouts/footer' %>
   </body>
 </html>

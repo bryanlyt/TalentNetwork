@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply, :restore, :mark_as_read

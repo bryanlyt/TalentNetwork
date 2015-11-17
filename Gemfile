@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-
 gem 'devise'
 gem 'cancancan', '~> 1.10' # authorization
 gem 'gon' # rails variable in js
@@ -40,8 +39,19 @@ gem 'carrierwave'
 gem 'cloudinary' # cloud storage for images
 gem 'mailboxer' # private message user inbox function
 gem 'will_paginate' # for mailboxer
-gem 'gravatar_image_tag' # gravatar as default avatar
+# gem 'gravatar_image_tag' # gravatar as default avatar
 gem 'chosen-rails' # jQuery friendly dropdown
+# gem 'rails-simple-search' # Search form
+# gem 'pg_search' # Search form
+gem 'mail_form'
+
+# elasticsearch
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
+
+# bootstrap gems
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # gem 'rubocop', require: false
 

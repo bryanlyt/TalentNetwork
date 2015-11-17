@@ -1,5 +1,7 @@
 module Taggable
   extend ActiveSupport::Concern
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks  
 
   included do
     has_and_belongs_to_many :tags

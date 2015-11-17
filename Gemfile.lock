@@ -37,10 +37,15 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.1.0.1)
+      execjs
+      json
     aws_cf_signer (0.1.3)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (8.0.0)
     cancancan (1.13.1)
@@ -101,7 +106,6 @@ GEM
       json
       multi_json
       request_store (>= 1.0)
-    gravatar_image_tag (1.2.0)
     hashie (3.4.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -124,6 +128,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_form (1.5.1)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mailboxer (0.13.0)
       carrierwave (>= 0.5.8)
       foreigner (>= 0.9.1)
@@ -222,6 +229,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass (~> 3.2.0)
   byebug
   cancancan (~> 1.10)
   carrierwave
@@ -230,11 +239,11 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   gon
-  gravatar_image_tag
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   kaminari
+  mail_form
   mailboxer
   omniauth
   pg

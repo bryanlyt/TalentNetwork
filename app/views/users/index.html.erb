@@ -1,11 +1,16 @@
 <div class="page-header">
   <h1>
-    User Profiles
+    Talent Profiles &nbsp;
+    <%= link_to "Can't find the right person? Contact us!", contacts_path, class: 'btn btn-warning pull-right', :method => :get %>
   </h1>
 
-
-
 </div>
+
+<%= form_tag(users_path, :method => "get", id: "search-form", class: 'pull-right') do %><em>You may search 'first_name', 'last_name', 'city', 'country' -> </em>
+    <%= text_field_tag :search, params[:search], placeholder: "Search User" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -19,7 +24,7 @@
         <%= t(:country) %>
       </th>
       <th>
-        <%= t(:interested_in) %>
+        <%= t(:interested_in) %> 
       </th>
       <th>
         

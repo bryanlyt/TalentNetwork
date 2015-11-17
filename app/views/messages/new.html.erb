@@ -1,12 +1,12 @@
-<% page_header "Start Conversation" %>
-
+  <h1>
+    &nbsp; &nbsp; Write New Message
+  </h1><br>
   <div class="container-fluid">
     <div class="panel panel-default">
 
       <%= form_tag messages_path, method: :post do %>
         <div class="form-group">
-          <%= label_tag 'recipients', 'Recipient:' %><br>
-          <%= select_tag 'recipients', recipients_options(@chosen_recipient) %>
+          <%= hidden_field_tag 'recipient', @recipient %><br>
         </div>
 
         <div class="form-group">
@@ -25,3 +25,4 @@
 <% end %>
 
 
+<!-- , {:disabled => true} -->

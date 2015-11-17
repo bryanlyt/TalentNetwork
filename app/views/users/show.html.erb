@@ -1,5 +1,7 @@
 <div class="page-header">
 
+  <h1>&nbsp; &nbsp; <%= @user %> </h1>
+</div> <!-- page-header -->
 	<div class="jumbotron">
 
 		<div class="row">
@@ -7,13 +9,12 @@
 	  		<center>
 		    	<% unless @user.avatar_url.nil? %><%= image_tag @user.avatar_url(:profile) %><br><% end %>
 
-  				<h2><%= @user %></h2>
   					<br>
 	  			<% @user.tags.each do |tag| %>
   	  			<span class="label label-info">
     	  			<%= tag.name %>
     				</span>
-  				<% end %>
+  				<% end %><br>
   			</center>
   		</div>
 
@@ -23,6 +24,9 @@
           <% end %> <hr>
   			<div class="row">
   				<div class="col-sm-4">
+            <strong>
+            Name: 
+            <br>
   					Gender: 
   					<br>
   					Date of Birth:
@@ -35,8 +39,11 @@
   					<br>
   					Profile Description:
   					<br>
+            </strong>
   				</div>
   				<div class="col-sm-8">
+            <%= @user %>
+            <br>
   					<%= @user.gender %>
   					<br>
   					<%= @user.date_of_birth %>
@@ -55,4 +62,3 @@
 
 		</div> <!-- row -->
 	</div> <!-- jumbotron -->
-</div> <!-- page-header -->

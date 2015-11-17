@@ -1,3 +1,4 @@
+
 <li class="list-group-item clearfix">
   <%= link_to conversation.subject, conversation_path(conversation) %>
 
@@ -14,7 +15,7 @@
   	<% end %>
 	</div>
 
-  <p><%= conversation.last_message.body %>
+  <p><%= conversation.last_message.body %><br><br>
     <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
 </li>
 

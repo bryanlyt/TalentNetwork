@@ -1,9 +1,5 @@
-<% page_header "Conversation" %>
-
-<p>Chatting with
-  <%= @conversation.to_s %>
-</p>
-
+<h1>&nbsp; Private Conversation with ()</h1>
+  <br>
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
 
@@ -18,7 +14,7 @@
 
           <div class="media-body">
             <h6 class="media-heading"><%= link_to message.sender.to_s, message.sender, :target => "_blank" %>
-              says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+              @ <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
             <%= message.body %>
           </div>
         </div>
