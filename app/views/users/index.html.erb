@@ -6,10 +6,12 @@
 
 </div>
 
-<%= form_tag(users_path, :method => "get", id: "search-form", class: 'pull-right') do %><em>You may search 'first_name', 'last_name', 'city', 'country' -> </em>
+
+<form action="<%= users_path %>" method="get" id="search-form" class="pull-right">
+<em>You may search 'first_name', 'last_name', 'city', 'country' -> </em>
     <%= text_field_tag :search, params[:search], placeholder: "Search User" %>
     <%= submit_tag "Search", :name => nil %>
-<% end %>
+</form>
 
 <table class="table table-hover">
   <thead>
@@ -35,7 +37,7 @@
     <% @users.each do |user| %>
       <tr>
         <td>
-          <%= link_to user.to_s, user, :target => "_blank" %>
+          <%= link_to user.to_s, user %>
         </td>
         <td>
           <%= user.city %>

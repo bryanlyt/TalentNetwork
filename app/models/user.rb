@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
   end
 
 def self.search(search)
-  where("first_name LIKE ? OR last_name LIKE ? OR city LIKE ? OR country LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+  where("first_name iLIKE ? OR last_name iLIKE ? OR city iLIKE ? OR country iLIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
 end
 
 

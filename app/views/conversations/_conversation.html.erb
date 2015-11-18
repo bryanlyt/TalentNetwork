@@ -1,6 +1,24 @@
-
 <li class="list-group-item clearfix">
-  <%= link_to conversation.subject, conversation_path(conversation) %>
+
+
+
+  <small><em>
+    <% conversation.receipts_for(current_user).each do |receipt| %>
+        <% if receipt.message.sender != current_user %>
+        
+    <% unless receipt.message.sender.avatar_url.nil? %>
+      <%= image_tag receipt.message.sender.avatar_url(:smallthumbnail) %>
+    <% end %>
+        Conversation with 
+        <%= receipt.message.sender.to_s %>
+      <% end %>
+    <% end %>
+    (<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)
+  </em></small>
+
+  <br><br>
+
+  <strong><%= link_to conversation.subject, conversation_path(conversation) %></strong>
 
 	<div class="btn-group-vertical pull-right">
   	<% if conversation.is_trashed?(current_user) %>
@@ -16,7 +34,7 @@
 	</div>
 
   <p><%= conversation.last_message.body %><br><br>
-    <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+</p>
 </li>
 
 

@@ -1,17 +1,28 @@
-<h1>&nbsp; Private Conversation with ()</h1>
+<h1>&nbsp; Private Conversation with
+  <% @conversation.receipts_for(current_user).each do |receipt| %>
+  <% message = receipt.message %>
+  <% if message.sender != current_user %>
+  <%= message.sender.to_s %>
+  <% end %>
+  <% end %>
+
+    <%= link_to "<- Back", conversations_path, class: 'btn btn-default pull-right', :method => :get %>
+
+<br>
+
+</h1>
   <br>
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
-
   <div class="panel-body">
     <div class="messages">
-      <% @conversation.receipts_for(current_user).each do |receipt| %>
+      <% @conversation.receipts_for(current_user).order(:created_at).each do |receipt| %>
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <% unless message.sender.avatar_url.nil? %><%= image_tag message.sender.avatar_url(:thumbnail) %><% end %>
+            <% unless message.sender.avatar_url.nil? %><%= image_tag message.sender.avatar_url(:thumbnail) %>
           </div>
-
+        <% end %>
           <div class="media-body">
             <h6 class="media-heading"><%= link_to message.sender.to_s, message.sender, :target => "_blank" %>
               @ <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
@@ -21,7 +32,6 @@
       <% end %>
     </div>
   </div>
-
 <%= form_tag reply_conversation_path(@conversation), method: :post do %>
   <div class="form-group">
     <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>

@@ -22,6 +22,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [50, 50]
   end
 
+  version :smallthumbnail do
+    process :eager => true
+    process :resize_to_fit => [18, 18]
+  end
+
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
