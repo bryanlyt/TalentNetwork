@@ -1,0 +1,9 @@
+development:
+  mailer_username: "testbryantest@gmail.com"
+  mailer_password: "bryanlimyongtiam"
+  mailer_domain: "localhost:3000"
+
+production:
+  mailer_username: "testbryantest@gmail.com"
+  mailer_password: "bryanlimyongtiam"
+  mailer_domain: "localhost:3000"

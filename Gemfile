@@ -53,6 +53,8 @@ gem 'mail_form'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem 'figaro'
+
 # gem 'rubocop', require: false
 
 # Use ActiveModel has_secure_password
