@@ -14,8 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project =
-      Project.new(project_params.merge(creator: current_user))
+    @project = Project.new(project_params.merge(creator: current_user))
     if @project.save
       flash[:success] = t(:successfully_created, instance: @project)
       redirect_to @project

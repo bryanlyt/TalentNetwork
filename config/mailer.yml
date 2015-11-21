@@ -5,5 +5,5 @@ development:
 
 production:
   mailer_username: "testbryantest@gmail.com"
-  mailer_password: "password here"
+  mailer_password: "passwordhere"
   mailer_domain: "localhost:3000"

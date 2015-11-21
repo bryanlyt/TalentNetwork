@@ -4489,6 +4489,10 @@ fieldset[disabled] .navbar-default .btn-link:hover,
 fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
+.navbar-inner {
+    background:transparent;
+}
+
 .navbar-inverse {
   background-color: #222;
   border-color: #080808;
@@ -4857,6 +4861,13 @@ a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #eee;
+}
+.jumbotron-image-bg {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+ background-image: url(mountain.jpg);
+ background-size: 1440px 800px;
+ background-repeat:no-repeat;
 }
 .jumbotron h1,
 .jumbotron .h1 {
